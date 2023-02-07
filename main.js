@@ -13,53 +13,48 @@
  let carrito = "carrito";
  let sillita = "sillita";
 
-while (productos != "fin") {
+ while (productos != "fin") {
 
-switch(productos) {
+     switch (productos) {
 
-    case body:
-        alert("El valor de su compra es: $ " + productoUno);
-        break;
+         case body:
+             alert("El valor del body es: $ " + productoUno);
+             break;
 
-    case carrito:
-        alert("El valor de su compra es: $ " + productoDos);
-        break;
+         case carrito:
+             alert("El valor del carrito es: $ " + productoDos);
+             break;
 
-    case sillita:
-        alert("El valor de su compra es: $ "+ productoTres);
-        break;
+         case sillita:
+             alert("El valor de la sillita es: $ " + productoTres);
+             break;
 
-default: alert("lo siento, ese producto no es valido.")
+         default:
+             alert("lo siento, ese producto no es valido.")
+     }
 
+     let cuota = parseInt(prompt("Por favor indique el numero de cuotas a abonar: 1 / 3 / 6 "));
 
-}
+     let interes = 1000;
+     
+     function totalCompra(producto, cuota) {
+        return (producto / cuota) + (interes * cuota);}
 
-let cuota = parseInt(prompt("Por favor indique el numero de cuotas a abonar: 1 / 3 / 6 "))
+     if (productos == "body") {
+           let valorTotalBody = totalCompra(3000,cuota);
+            alert("El total de su compra es de $ " + valorTotalBody + ", gracias por elegirnos!");
+            productos = "fin";            
+         }  else if (productos == "carrito") {
+          let valorTotalCarrito = totalCompra(41000, cuota);
+         alert("El total de su compra es de $ " + valorTotalCarrito + ", gracias por elegirnos!");
+         productos = "fin";
 
-let interes = 1000;
+     } else if (productos = "sillita") {
+         let valorTotalSillita = totalCompra(32000, cuota);
+         alert("El total de su compra es de $ " + valorTotalSillita + ", gracias por elegirnos!");
+         productos = "fin";
 
-if ( productos == "body") {
-{      function totalCompra1 (productoUno, cuota) {
-        return (productoUno / cuota) + (interes * cuota);
-    }
+     }
+     }
 
-    let valorTotalBody = totalCompra1();
-    alert("El total de su compra es de $ "+ valorTotalBody + ", gracias por elegirnos!");
-}} else if  (productos == "carrito") {
-    function totalCompra2 (productoDos, cuota) {
-        return (productoDos, cuota) + (interes * cuota);
-    }
-    let valorTotalCarrito = totalCompra2();
-    alert("El total de su compra es de $ "+ valorTotalCarrito + ", gracias por elegirnos!");
-
-} else if (productos = "sillita") {
-    function totalCompra3 (productoTres, cuota) {
-        return (productoTres, cuota) + (interes * cuota);
-    }
-    let valorTotalSillita = totalCompra3();
-    alert("El total de su compra es de $ "+ valorTotalSillita + ", gracias por elegirnos!");
-}
-
-
-} 
 
